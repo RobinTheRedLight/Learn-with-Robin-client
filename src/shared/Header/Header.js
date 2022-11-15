@@ -8,6 +8,9 @@ const Header = () => {
                 <div className="flex-1">
                     <Link className=' font-mono text-white btn btn-ghost normal-case text-2xl' to='/'>Learn With Robin</Link>
                 </div>
+                <ul className="text-white text-xl menu menu-horizontal px-4">
+                    <Link to='/courses'>Courses</Link>
+                </ul>
                 <div className="flex-none gap-2">
 
                     <div className="dropdown dropdown-end">

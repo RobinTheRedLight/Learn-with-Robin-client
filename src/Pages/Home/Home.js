@@ -11,7 +11,7 @@ const Home = () => {
                 allData.map(data =>
                     <h3 key={data.id} className='pt-3 font-serif text-red-300 text-xl font-bold'># {data.name}:
                         <span className=' text-slate-50 font-sans text-lg font-semibold'>
-                            {data.description}
+                            <span> </span>{data.description}
                         </span>
                     </h3>)
             }
