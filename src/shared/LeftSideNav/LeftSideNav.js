@@ -18,7 +18,7 @@ const LeftSideNav = () => {
             <div className='pt-10 flex flex-wrap  justify-around items-center'>
                 {
                     allData.map(data =>
-                        <div className="card w-40 glass">
+                        <div key={data.id} className="card w-40 glass">
                             <figure className='p-5'><p className='font-bold text-center text-white'>{data.name}</p></figure>
                             <div className="card-body">
 
