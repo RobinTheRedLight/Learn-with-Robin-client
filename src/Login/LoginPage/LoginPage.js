@@ -60,11 +60,11 @@ const LoginPage = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                if (user.emailVerified) {
+                if (user.uid) {
                     navigate(from, { replace: true });
                 }
                 else {
-                    toast.error('Your email is not verified. Please verify your email address.')
+                    toast.error('Log in failed');
                 }
             })
             .catch(error => {
@@ -78,6 +78,9 @@ const LoginPage = () => {
 
     return (
         <div>
+            <div className='text-center'>
+                <h1 className='p-6 text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-red-300'>Please Login !</h1>
+            </div>
             <div className='flex justify-center mt-5'>
                 <form onSubmit={handleSubmit}>
                     <div className="form-control">
@@ -96,13 +99,13 @@ const LoginPage = () => {
                         </label>
                         <label className="input-group">
                             <span>Password</span>
-                            <input name="password" type="password" placeholder="Password" required className="input input-bordered w-full" />
+                            <input name="password" type="password" placeholder="Enter Password" required className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div>
                         <p className="text-red-700">{error}</p>
                     </div>
-                    <button className="btn btn-accent mt-4">Login</button>
+                    <button className=" btn btn-accent mt-4">Login</button>
 
                 </form>
             </div>
