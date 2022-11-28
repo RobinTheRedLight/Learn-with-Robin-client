@@ -3,10 +3,12 @@ import CourseLayout from "../layout/CourseLayout";
 import Main from "../layout/Main";
 import LoginPage from "../Login/LoginPage/LoginPage";
 import Registration from "../Login/Registration/Registration";
+import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import Course from "../Pages/Course/Course";
 import Courses from "../Pages/Courses/Courses";
 import Home from "../Pages/Home/Home";
 import SelectedCourses from "../Pages/SelectedCourses/SelectedCourses";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -47,5 +49,10 @@ export const router = createBrowserRouter([
     {
         path: '/register',
         element: <Registration></Registration>
+    },
+    {
+        path: '/checkout/:id',
+        element: <PrivateRoute><CheckoutPage></CheckoutPage></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/checkout/${params.id}`)
     }
 ])

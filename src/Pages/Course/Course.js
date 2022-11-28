@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 
 const Course = () => {
@@ -10,7 +10,7 @@ const Course = () => {
         onAfterPrint: () => alert('Print window closed'),
     });
     const singleCourse = useLoaderData();
-    const { name, details } = singleCourse;
+    const { name, details, checkout_id } = singleCourse;
     return (
         <>
             <div ref={componentRef} className="card w-100 bg-base-100  bg-inherit">
@@ -24,7 +24,11 @@ const Course = () => {
                 <div className="card-body items-center text-center">
                     <p>{details.description}</p>
                     <div className="card-actions">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <Link className="btn btn-warning"
+                            role="button"
+                            to={`/checkout/${checkout_id}`}>
+                            Get premium access
+                        </Link >
                     </div>
                 </div>
             </div>
