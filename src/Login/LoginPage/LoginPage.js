@@ -1,7 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 
@@ -102,10 +102,13 @@ const LoginPage = () => {
                             <input name="password" type="password" placeholder="Enter Password" required className="input input-bordered w-full" />
                         </label>
                     </div>
+                    <div className='mt-2'>
+                        <p>Don't have an account yet? <Link to='/register' className="text-blue-400 underline ">Register</Link></p>
+                    </div>
                     <div>
                         <p className="text-red-700">{error}</p>
                     </div>
-                    <button className=" btn btn-accent mt-4">Login</button>
+                    <button className=" btn btn-accent mt-3">Login</button>
 
                 </form>
             </div>

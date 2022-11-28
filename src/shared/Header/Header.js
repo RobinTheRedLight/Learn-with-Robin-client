@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { FaUser } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -10,6 +11,8 @@ const Header = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+    const notify = () => toast.error('Log in First', { duration: 1000 });
+
     return (
         <div>
             <div className="navbar bg-accent">
@@ -22,10 +25,15 @@ const Header = () => {
 
                             <div>
                                 <div className='pt-1'>
-                                    <Link to="/profile">
+                                    <Link>
                                         {user?.photoURL ?
                                             <img className='h-8 rounded-full' src={user?.photoURL} alt="" />
-                                            : <h1 className='text-xl'><FaUser></FaUser></h1>
+                                            :
+                                            <>
+                                                <h1 onClick={notify} className='text-xl'><FaUser></FaUser></h1>
+                                                <Toaster />
+                                            </>
+
                                         }
                                     </Link>
                                 </div>
@@ -79,10 +87,14 @@ const Header = () => {
 
                             </div>
                             <div className='pt-1'>
-                                <Link to="/profile">
+                                <Link>
                                     {user?.photoURL ?
-                                        <img className='h-8 rounded-full' src={user?.photoURL} alt="" />
-                                        : <h1 className='text-xl pt-1 px-3'><FaUser></FaUser></h1>
+                                        <img title={user.displayName} className='h-8 rounded-full' src={user?.photoURL} alt="" />
+                                        :
+                                        <>
+                                            <h1 onClick={notify} className='text-xl pt-1 px-3'><FaUser></FaUser></h1>
+                                            <Toaster />
+                                        </>
                                     }
                                 </Link>
                             </div>
