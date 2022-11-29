@@ -3,6 +3,7 @@ import CourseLayout from "../layout/CourseLayout";
 import Main from "../layout/Main";
 import LoginPage from "../Login/LoginPage/LoginPage";
 import Registration from "../Login/Registration/Registration";
+import Blog from "../Pages/Blog/Blog";
 import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import Course from "../Pages/Course/Course";
 import Courses from "../Pages/Courses/Courses";
@@ -54,5 +55,9 @@ export const router = createBrowserRouter([
         path: '/checkout/:id',
         element: <PrivateRoute><CheckoutPage></CheckoutPage></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/checkout/${params.id}`)
-    }
+    },
+    {
+        path: '/Blog',
+        element: <Blog></Blog>
+    },
 ])

@@ -101,7 +101,7 @@ const Header = () => {
                         </div>
                         <Link className=' text-xl pt-1 px-3' to='/courses'>Courses</Link>
                         <Link className=' text-xl pt-1 px-3' to='/courses'>FAQ</Link>
-                        <Link className=' text-xl pt-1 px-3' to='/courses'>Blog</Link>
+                        <Link className=' text-xl pt-1 px-3' to='/Blog'>Blog</Link>
                         <Link className='text-xl pt-1 px-3' to='/courses'>Courses</Link>
                     </ul>
                 </div>
