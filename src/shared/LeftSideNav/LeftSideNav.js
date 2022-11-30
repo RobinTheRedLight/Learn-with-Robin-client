@@ -13,12 +13,12 @@ const LeftSideNav = () => {
     return (
         <div className='sticky top-0'>
             <div>
-                <h1 className='p-6 text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-red-300'>Choose Your Language</h1>
+                <h1 className='p-6 text-2xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-red-300'>Choose Your Language</h1>
             </div>
-            <div className='pt-10 flex flex-wrap  justify-around items-center'>
+            <div className=' pt-10 sm:flex flex-wrap  justify-around items-center'>
                 {
                     allData.map(data =>
-                        <div key={data.id} className="card w-40 glass">
+                        <div key={data.id} className="card sm:w-40 glass">
                             <figure className='p-5'><p className='font-bold text-center text-white'>{data.name}</p></figure>
                             <div className="card-body">
 

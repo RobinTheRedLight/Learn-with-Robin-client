@@ -12,6 +12,9 @@ const Header = () => {
             .catch(error => console.error(error))
     }
     const notify = () => toast.error('Log in First', { duration: 1000 });
+    const alertUser = () => {
+        alert("Log in first!");
+    }
 
     return (
         <div>
@@ -30,7 +33,7 @@ const Header = () => {
                                             <img className='h-8 rounded-full' src={user?.photoURL} alt="" />
                                             :
                                             <>
-                                                <h1 onClick={notify} className='text-xl'><FaUser></FaUser></h1>
+                                                <h1 onClick={alertUser} className='text-xl'><FaUser></FaUser></h1>
                                                 <Toaster />
                                             </>
 
@@ -56,12 +59,11 @@ const Header = () => {
 
                             </div>
                             <Link className='pt-3' to='/courses'>Courses</Link>
-                            <Link className='pt-3' to='/courses'>Courses</Link>
-                            <Link className='pt-3' to='/courses'>Courses</Link>
-                            <Link className='pt-3' to='/courses'>Courses</Link>
+                            <Link className='pt-3'>FAQ</Link>
+                            <Link className='pt-3' to='/Blog'>Blog</Link>
                         </ul>
                     </div>
-                    <Link className=' font-mono text-white btn btn-ghost normal-case text-2xl' to='/'>Learn With Robin</Link>
+                    <Link className=' font-mono text-white btn btn-ghost normal-case sm:text-2xl' to='/'>Learn With Robin</Link>
                     <div className="w-10">
                         <img src="logo.png" />
                     </div>
@@ -100,7 +102,7 @@ const Header = () => {
                             </div>
                         </div>
                         <Link className=' text-xl pt-1 px-3' to='/courses'>Courses</Link>
-                        <Link className=' text-xl pt-1 px-3' to='/courses'>FAQ</Link>
+                        <Link className=' text-xl pt-1 px-3'>FAQ</Link>
                         <Link className=' text-xl pt-1 px-3' to='/Blog'>Blog</Link>
                     </ul>
                 </div>

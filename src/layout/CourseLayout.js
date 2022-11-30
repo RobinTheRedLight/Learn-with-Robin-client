@@ -8,7 +8,7 @@ const CourseLayout = () => {
     return (
         <div>
             <Header></Header>
-            <div className='bg-blue-200 h-full p-8 grid  lg:grid-cols-2 md:grid-cols-1 gap-6'>
+            <div className='bg-blue-200 h-full sm:p-8 grid  lg:grid-cols-2 md:grid-cols-1 gap-6'>
                 <div className=' rounded-lg bg-violet-700 py-4'>
                     <CourseLeftSideNav></CourseLeftSideNav>
                 </div>

@@ -9,10 +9,10 @@ const CourseLeftSideNav = () => {
             .then(data => setCourseData(data))
     }, [])
     return (
-        <div className="grid grid-cols-1 gap-4 w-80 mx-auto">
+        <div className="grid grid-cols-1 gap-4 sm:w-80 mx-auto">
             {
                 courseData.map(data =>
-                    <Link key={data._id} className="btn btn-outline text-white"
+                    <Link key={data._id} className=" sm:w-full btn btn-outline text-white"
                         role="button"
                         to={`/courses/${data._id}`}>
                         {data.name}
