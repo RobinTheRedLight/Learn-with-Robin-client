@@ -13,6 +13,10 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
+        path: '*',
+        element: <h1 className="text-7xl text-center">404 Not Found</h1>
+    },
+    {
         path: '/',
         element: <Main></Main>,
         children: [
@@ -41,6 +45,7 @@ export const router = createBrowserRouter([
                 element: <Course></Course>,
                 loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             },
+
         ]
     },
     {
@@ -59,5 +64,6 @@ export const router = createBrowserRouter([
     {
         path: '/Blog',
         element: <Blog></Blog>
-    },
+    }
+
 ])
