@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CourseLeftSideNav = () => {
     const [courseData, setCourseData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/courses')
+        fetch('https://learn-with-robin-server.vercel.app/courses')
             .then(res => res.json())
             .then(data => setCourseData(data))
     }, [])

@@ -23,12 +23,12 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/')
+                loader: () => fetch('https://learn-with-robin-server.vercel.app/')
             },
             {
                 path: '/:id',
                 element: <SelectedCourses></SelectedCourses>,
-                loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`)
+                loader: ({ params }) => fetch(`https://learn-with-robin-server.vercel.app/${params.id}`)
             },
         ]
     },
@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
             {
                 path: '/courses/:id',
                 element: <Course></Course>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://learn-with-robin-server.vercel.app/courses/${params.id}`)
             },
 
         ]
@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
     {
         path: '/checkout/:id',
         element: <PrivateRoute><CheckoutPage></CheckoutPage></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/checkout/${params.id}`)
+        loader: ({ params }) => fetch(`https://learn-with-robin-server.vercel.app/checkout/${params.id}`)
     },
     {
         path: '/Blog',
