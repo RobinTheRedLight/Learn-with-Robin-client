@@ -8,6 +8,7 @@ import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import Course from "../Pages/Course/Course";
 import Courses from "../Pages/Courses/Courses";
 import Home from "../Pages/Home/Home";
+import Lectures from "../Pages/Lectures/Lectures";
 import SelectedCourses from "../Pages/SelectedCourses/SelectedCourses";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
@@ -23,12 +24,12 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://learn-with-robin-server.vercel.app/')
+                loader: () => fetch('http://localhost:5000/')
             },
             {
                 path: '/:id',
                 element: <SelectedCourses></SelectedCourses>,
-                loader: ({ params }) => fetch(`https://learn-with-robin-server.vercel.app/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`)
             },
         ]
     },
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
             {
                 path: '/courses/:id',
                 element: <Course></Course>,
-                loader: ({ params }) => fetch(`https://learn-with-robin-server.vercel.app/courses/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             },
 
         ]
@@ -59,11 +60,16 @@ export const router = createBrowserRouter([
     {
         path: '/checkout/:id',
         element: <PrivateRoute><CheckoutPage></CheckoutPage></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://learn-with-robin-server.vercel.app/checkout/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/checkout/${params.id}`)
     },
     {
         path: '/Blog',
         element: <Blog></Blog>
+    },
+    {
+        path: '/lectures/:id',
+        element: <Lectures></Lectures>,
+        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
     }
 
 ])

@@ -5,7 +5,7 @@ const LeftSideNav = () => {
     const [allData, setAllData] = useState([]);
 
     useEffect(() => {
-        fetch('https://learn-with-robin-server.vercel.app/')
+        fetch('http://localhost:5000/')
             .then(res => res.json())
             .then(data => setAllData(data))
     }, [])
