@@ -13,7 +13,6 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithPopup(auth, provider);
     }
-
     const providerGithubLogin = (provider) => {
         setLoading(true);
         return signInWithPopup(auth, provider);

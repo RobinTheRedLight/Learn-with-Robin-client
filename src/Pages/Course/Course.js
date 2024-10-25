@@ -1,39 +1,45 @@
-import React, { useRef } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
-import { useReactToPrint } from 'react-to-print';
+import React, { useRef } from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { useReactToPrint } from "react-to-print";
 
 const Course = () => {
-    const componentRef = useRef();
-    const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
-        documentTitle: 'Document',
-        onAfterPrint: () => alert('Print window closed'),
-    });
-    const singleCourse = useLoaderData();
-    const { name, details, checkout_id } = singleCourse;
-    return (
-        <>
-            <div ref={componentRef} className="card w-100 bg-base-100  bg-inherit">
-                <div className='flex mx-auto'>
-                    <h2 className="card-title mx-auto px-3">Programming with ' {name} '</h2>
-                    <button onClick={handlePrint} className="btn btn-outline btn-success">PDF</button>
-                </div>
-                <figure className="px-10 pt-10">
-                    <img src={details.img} alt="Shoes" className="h-48 w-48 rounded-xl" />
-                </figure>
-                <div className="card-body items-center text-center">
-                    <p>{details.description}</p>
-                    <div className="card-actions">
-                        <Link className="btn btn-warning"
-                            role="button"
-                            to={`/checkout/${checkout_id}`}>
-                            Get premium access
-                        </Link >
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: "Document",
+    onAfterPrint: () => alert("Print window closed"),
+  });
+  const singleCourse = useLoaderData();
+  const { name, details, checkout_id } = singleCourse;
+  return (
+    <>
+      <div ref={componentRef} className="card w-100 bg-base-100  bg-inherit">
+        <div className="flex mx-auto">
+          <h2 className="card-title mx-auto px-3">
+            Programming with ' {name} '
+          </h2>
+          <button onClick={handlePrint} className="btn btn-outline btn-success">
+            PDF
+          </button>
+        </div>
+        <figure className="px-10 pt-10">
+          <img src={details.img} alt="Shoes" className="h-48 w-48 rounded-xl" />
+        </figure>
+        <div className="card-body items-center text-center">
+          <p>{details.description}</p>
+          <div className="card-actions">
+            <Link
+              className="btn bg-black text-white "
+              role="button"
+              to={`/checkout/${checkout_id}`}
+            >
+              Get Resources
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Course;
